@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/com/atguigu/advance/JDBCAdvanced.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/com/atguigu/base/JDBCQuick.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/com/atguigu/base/JDBCtest.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/senior/dao/impl/EmployeeDaoImpl.java" dialect="GenericSQL" />
   </component>
 </project>

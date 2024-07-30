@@ -25,8 +25,11 @@ public class BaseDAO {
         //拿出受影响的行数
         int row = preparedStatement.executeUpdate();
         //处理结果
-        JDBCUtilV2.release();
+
         preparedStatement.close();
+        if(connection.getAutoCommit()){
+            JDBCUtilV2.release();
+        }
         return row;
 
 
@@ -68,7 +71,10 @@ public class BaseDAO {
         }
         resultSet.close();
         preparedStatement.close();
-        JDBCUtilV2.release();
+        if(connection.getAutoCommit()){//是因为如果事务没有开启，则为true，可以直接调用JDBCUtil来释放连接池资源，如果事务开启了，则不能直接释放资源，这是一句将
+            //sql作为一个实现的单元，根据事务开启与否来确定其是否为事务的控制条件。
+            JDBCUtilV2.release();
+        }
         return list;
     }
     //单个数据的方法
