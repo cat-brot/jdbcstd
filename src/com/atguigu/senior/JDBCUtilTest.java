@@ -45,7 +45,7 @@ public class JDBCUtilTest {
 //        Employee employee = employeeDao.selectByEmpID(1);
 //        System.out.println("employee = " + employee);
           Employee employee = new Employee(1,"andy", 656.0,38);
-          int update = employeeDao.update(employee);
+          int update = employeeDao.update(employee);//调用了employDao中的update方法，其中的update方法又调用了BaseDAO通用的增删查改的方法，其中employDao的抽象方法实现由employeeDaoImpl完成
           System.out.println("update = " + update);
 
     }
